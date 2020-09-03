@@ -1,2 +1,17 @@
-%h1 Tasks#index
-%p Find me in app/views/tasks/index.html.erb
+%h1 
+  タスク一覧
+%table
+  %thead
+    %tr
+      %th
+        タスク名
+  %tbody
+    - @tasks.each do |task|
+      %tr
+        %td
+          = task.title
+        %td
+          = link_to '編集', edit_task_path(task)
+        %td
+          = link_to '削除', task_path(task), method: :delete
+= link_to '追加', new_task_path 

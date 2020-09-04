@@ -1,3 +1,135 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+
+// main
+
+.fas {
+  float: right;
+  margin-right: 20px;
+}
+
+.main {
+  background-image: url("ひまわり.jpg");
+  background-size: cover;
+  padding: 40px 60px;
+  max-width: 100%;
+  height: 100vh;
+  padding: 40px;
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-family: monospace;
+    color: rgba(0, 0, 0, 0.973);
+  }
+  &__table {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 8px;
+    &__thead {
+      border-bottom: 1px solid #999;
+      &__tr {
+      }
+      &__th {
+        padding: 15px 15px 5px 15px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    &__tbody {
+      width: 100%;
+      border-bottom: 1px solid #eee;
+      &__tr {
+        
+      }
+      &__td {
+        padding: 5px 15px 5px 15px;
+        border-bottom: 1px solid #999;
+      }
+    }
+  }
+  &__add {
+    float: right;
+    border-radius: 10px;
+    width: 55px;
+    background-color: rgba(18, 224, 87, 0.973);
+    &__btn {
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      color: #fff;
+    }
+  }
+}
+
+// new
+
+.form {
+  background-image: url("ひまわり.jpg");
+  background-size: cover;
+  padding: 40px;
+  max-width: 100%;
+  height: 100vh;
+  text-align: center;
+  &__main {
+    padding: 20px;
+  }
+  &__contents {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__main {
+    &__title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 40px;
+      font-family: monospace;
+      color: rgba(46, 228, 158, 0.973);
+    }
+  }
+  &__title {
+    &__label {
+      font-size: 20px;
+    }
+  }
+  &__titleText {
+    margin-bottom: 10px;
+    &__field {
+      padding: 3px 10px;
+    }
+  }
+  &__messageText {
+    margin-bottom: 10px;
+    &__area {
+      height: 80px;
+      padding: 10px;
+    }
+  }
+  &__submit {
+    &__btn {
+      background-color: rgba(46, 228, 158, 0.973);
+      padding: 3px 8px;
+      color: #fff;
+    }
+  }
+  &__back {
+    text-align: center;
+    background-color: gray;
+    width: 50px;
+    border-radius: 10px;
+    &__btn {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

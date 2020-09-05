@@ -1,5 +1,7 @@
 .main
-  %h1.main__title 
+  .main__TASKSAILER
+    = link_to "TASK SAILER", root_path, class:"main__TASKSAILER"
+  .main__title 
     タスク一覧
   %table.main__table
     %thead.main__table__thead
@@ -8,6 +10,10 @@
           タスク名
         %th.main__table__thead__th
           詳細
+        %th.main__table__thead__th
+          編集
+        %th.main__table__thead__th
+          削除
     %tbody.main__table__tbody
       - @tasks.each do |task|
         %tr.main__table__tbody__tr

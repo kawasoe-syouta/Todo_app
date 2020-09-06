@@ -8,8 +8,8 @@
       %tr.main__table__thead__tr
         %th.main__table__thead__th
           タスク名
-        %th.main__table__thead__th
-          詳細
+        -# %th.main__table__thead__th
+        -#   詳細
         %th.main__table__thead__th
           編集
         %th.main__table__thead__th
@@ -17,15 +17,17 @@
     %tbody.main__table__tbody
       - @tasks.each do |task|
         %tr.main__table__tbody__tr
-          %td.main__table__tbody__td
-            = task.title  
-          %td.main__table__tbody__td
-            = simple_format task.message
-          %td.main__table__tbody__td
-            = link_to edit_task_path(task) do
-              = icon('fas', 'edit')
-          %td.main__table__tbody__td
-            = link_to task_path(task), method: :delete do
-              = icon('fas', 'trash')
+          - if task.user.id == current_user.id
+            %td.main__table__tbody__td
+              = link_to task_path(task), class: "main__table__tbody__td__title" do
+                = task.title  
+            -# %td.main__table__tbody__td
+            -#   = simple_format task.message
+            %td.main__table__tbody__td
+              = link_to edit_task_path(task) do
+                = icon('fas', 'edit')
+            %td.main__table__tbody__td
+              = link_to task_path(task), method: :delete do
+                = icon('fas', 'trash')
   .main__add
     = link_to '追加', new_task_path, class: "main__add__btn" 

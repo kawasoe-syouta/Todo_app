@@ -1,0 +1,18 @@
+.show
+  .show__main
+    .show__main__title
+      TASK SHOW
+    .show__main__area
+      .show__main__area__message
+        = simple_format @task.message
+    .show__main__btn
+      .show__main__btn__edit
+        = link_to edit_task_path(@task), class: "show__main__btn__edit" do
+          編集
+          = icon('fas', 'edit')
+      .show__main__btn__trash
+        = link_to task_path(@task), method: :delete, class: "show__main__btn__trash" do
+          削除
+          = icon('fas', 'trash')
+    .show__back
+      = link_to '戻る', tasks_path, class: "show__back__btn"

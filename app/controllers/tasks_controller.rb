@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
   def index
     @tasks = Task.all
+  end
+
+  def show
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -9,17 +14,28 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-    redirect_to tasks_path
+    @task.user_id = current_user.id
+    if @task.save
+      redirect_to task_path(@task), notice: '登録に成功しました。'
+    else
+      render :new
+    end
   end
 
   def edit
     @task = Task.find(params[:id])
+    if @task.user != current_user
+      redirect_to root_path, alert: '不正なアクセスです。'
+    end
   end
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
-    redirect_to tasks_url
+    if @task.update(task_params)
+      redirect_to task_path(@task), notice: '更新に成功しました。'
+    else
+      render :edit
+    end
   end
 
   def destroy

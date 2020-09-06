@@ -9,8 +9,13 @@
 // main
 
 .fas {
-  margin-left: 15px;
   font-size: 40px;
+}
+.star {
+  font-size: 40px;
+  &__star1 {
+    color: orangered;
+  }
 }
 
 .main {
@@ -40,6 +45,7 @@
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     width: 100%;
+    border: 1px solid gray;
     &__thead {
       border-bottom: 1px solid #999;
       &__tr {
@@ -62,9 +68,16 @@
         padding: 5px 15px 5px 15px;
         font-size: 25px;
         border-bottom: 1px solid #999;
+        font-weight: bold;
         &__title {
           text-decoration: none;
           color: black;
+        }
+        &__edit {
+          color: green;
+        }
+        &__trash {
+          color: blueviolet;
         }
       }
     }
@@ -72,7 +85,7 @@
   &__add {
     margin: 10px;
     border-radius: 10px;
-    background-color: rgba(18, 224, 87, 0.973);
+    background-color: rgba(18, 224, 87, 0.9);
     &__btn {
       padding: 10px 30px;
       font-size: 40px;
@@ -108,9 +121,11 @@
     &__area {
       margin-bottom: 30px;
       width: 85%;
+      border: 1px solid gray;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
       &__message {
         text-align: left;
-        background-color: rgba(255, 255, 255, 0.8);
         font-size: 28px;
       }
     }
@@ -120,19 +135,23 @@
       padding: 30px 70px;
       background-color: rgba(255, 255, 255, 0.8);
       width: 70%;
+      border: 1px solid gray;
       &__edit {
         text-decoration: none;
         font-size: 23px;
+        color: green;
       }
       &__trash {
         font-size: 23px;
         text-decoration: none;
+        color: blueviolet;
       }
     }
   }
   &__back {
     margin-top: 40px;
     background-color: gray;
+    opacity: 0.9;
     width: 130px;
     border-radius: 10px;
     &__btn {
@@ -205,7 +224,8 @@
   &__submit {
     margin-bottom: 20px;
     &__btn {
-      background-color: rgba(46, 228, 158, 0.973);
+      border-radius: 10px;
+      background-color: rgba(46, 228, 158, 0.9);
       padding: 5px 10px;
       font-size: 50px;
       color: #fff;
@@ -214,6 +234,7 @@
   &__back {
     text-align: center;
     background-color: gray;
+    opacity: 0.9;
     width: 130px;
     border-radius: 10px;
     &__btn {

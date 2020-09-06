@@ -1,15 +1,8 @@
 .form
   .form__main
-    -# - if @task.errors.any?
-    -#   .errors
-    -#     = pluralize(@task.errors.count, "error")
-    -#     prohibited this object from being saved: not successfully
-    -#     .errors__message
-    -#       - @task.errors.full_messages.each do |message|
-    -#         = message
     %h1.form__main__title
       New Task
-    = form_with(model: @task) do |f|
+    = form_with(model: @task, local: true) do |f|
       .form__contents
         .form__title
           = f.label :title, class: "form__title__label"

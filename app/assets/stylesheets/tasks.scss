@@ -19,7 +19,7 @@
 }
 
 .main {
-  background-image: url("ひまわり.jpg");
+  background-image: image-url("ひまわり.jpg");
   background-size: cover;
   padding: 40px 60px;
   max-width: 100%;
@@ -100,7 +100,7 @@
 // show
 
 .show {
-  background-image: url("ひまわり.jpg");
+  background-image: image-url("ひまわり.jpg");
   background-size: cover;
   padding: 40px 20px;
   max-width: 100%;
@@ -167,7 +167,7 @@
 // form
 
 .form {
-  background-image: url("ひまわり.jpg");
+  background-image: image-url("ひまわり.jpg");
   background-size: cover;
   padding: 40px;
   max-width: 100%;

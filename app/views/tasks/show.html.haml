@@ -11,7 +11,7 @@
           編集
           = icon('fas', 'edit')
       .show__main__btn__trash
-        = link_to task_path(@task), method: :delete, class: "show__main__btn__trash" do
+        = link_to task_path(@task), method: :delete, data: {confirm: "削除しますか？"}, class: "show__main__btn__trash" do
           削除
           = icon('fas', 'trash')
     .show__back

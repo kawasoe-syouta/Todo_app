@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     @task = Task.create(task_params)
     @task.user_id = current_user.id
     if @task.save
-      redirect_to task_path(@task), notice: '登録に成功しました。'
+      redirect_to tasks_path, notice: '登録に成功しました。'
     else
       render :new
     end
@@ -32,7 +32,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to task_path(@task), notice: '更新に成功しました。'
+      redirect_to tasks_path, notice: '更新に成功しました。'
     else
       render :edit
     end

@@ -22,6 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+### テスト用のID/PWです。
+
+ID test
+PW test@com
+
+
 ## importantsテーブル
 
 |Column|Type|Options|

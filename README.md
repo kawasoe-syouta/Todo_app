@@ -25,8 +25,8 @@ Things you may want to cover:
 
 ### テスト用のID/PWです。
 
-ID test
-PW test@com
+ID test2@com
+PW 222222
 
 
 ## importantsテーブル

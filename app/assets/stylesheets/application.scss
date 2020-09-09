@@ -17,3 +17,15 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import "reset";
+
+ .fuzzy_search {
+  background-color: rgba(45, 243, 161, 0.7);
+  padding: 20px;
+  &__field {
+    width: 93%;
+    padding: 5px;
+  }
+  &__btn {
+    padding: 5px;
+  }
+}

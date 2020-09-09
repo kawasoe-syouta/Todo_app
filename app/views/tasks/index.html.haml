@@ -1,7 +1,3 @@
-.fuzzy_search
-  = form_tag(searches_path,method: :get) do
-    = text_field_tag :search, "",placeholder:"何かお探しですか？", class: "fuzzy_search__field"
-    = submit_tag '検索', :name => nil, class: "fuzzy_search__btn"
 .main
   .main__TASKSAILER
     = link_to "TASK SAILER", root_path, class:"main__TASKSAILER"

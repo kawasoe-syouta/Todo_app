@@ -2,11 +2,16 @@
   = form_tag(searches_path,method: :get) do
     = text_field_tag :search, "",placeholder:"何かお探しですか？", class: "fuzzy_search__field"
     = submit_tag '検索', :name => nil, class: "fuzzy_search__btn"
-.main
-  .main__TASKSAILER
-    = link_to "TASK SAILER", root_path, class:"main__TASKSAILER"
-  .main__title 
-    タスク一覧
+.search
+  .search__container
+    .search__container__items
+      -if @search.present?
+        .search__container__items__title
+          = @search 
+          %span.search__container__items__title__sub
+            の検索結果
+        .search__result__number
+          ="#{@tasks.count}件表示"
   %table.main__table
     %thead.main__table__thead
       %tr.main__table__thead__tr
@@ -40,5 +45,5 @@
             %td.main__table__tbody__td
               = link_to task_path(task), method: :delete, data: {confirm: "削除しますか？"}, class: "main__table__tbody__td__trash" do
                 = icon('fas', 'trash')
-  .main__add
-    = link_to '追加', new_task_path, class: "main__add__btn" 
+  .form__back
+    = link_to '戻る', tasks_path, class: "form__back__btn"

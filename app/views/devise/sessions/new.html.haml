@@ -1,0 +1,25 @@
+.sign
+  .sign__main
+    .sign__main__title 
+      Log in
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .sign__main__form
+        .sign__main__form__email
+          = f.label :email
+          %br/
+        .sign__main__form__email__text
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "sign__main__form__email__text"
+        .sign__main__form__password
+          = f.label :password
+          %br/
+        .sign__main__form__password__text
+          = f.password_field :password, autocomplete: "current-password", class: "sign__main__form__password__text"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me, class: "sign__main__form__remember__box"
+            = f.label :remember_me, class: "sign__main__form__remember"
+        .sign__main__form__submit
+          = f.submit "ログイン", class: "sign__main__form__submit__btnl"
+        .form__back
+          = link_to '戻る', root_path, class: "form__back__btn"
+      -# = render "devise/shared/links"

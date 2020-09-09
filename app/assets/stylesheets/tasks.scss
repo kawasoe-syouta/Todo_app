@@ -1,0 +1,248 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+
+// main
+
+.fas {
+  font-size: 40px;
+}
+.star {
+  font-size: 40px;
+  &__star1 {
+    color: orangered;
+  }
+}
+
+.main {
+  background-image: url("ひまわり.jpg");
+  background-size: cover;
+  padding: 40px 60px;
+  max-width: 100%;
+  height: 120vh;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  &__TASKSAILER {
+    text-decoration: none;
+    color: rgba(45, 243, 161, 0.7);
+    font-size: 80px;
+    font-weight: bold;
+  }
+  &__title {
+    text-align: center;
+    font-size: 60px;
+    font-family: monospace;
+    color: rgba(0, 0, 0, 0.973);
+  }
+  &__table {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width: 100%;
+    border: 1px solid gray;
+    &__thead {
+      border-bottom: 1px solid #999;
+      &__tr {
+      }
+      &__th {
+        text-align: center;
+        padding: 15px 15px 5px 15px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+    &__tbody {
+      width: 100%;
+      border-bottom: 1px solid #eee;
+      &__tr {
+        
+      }
+      &__td {
+        text-align: center;
+        padding: 5px 15px 5px 15px;
+        font-size: 25px;
+        border-bottom: 1px solid #999;
+        font-weight: bold;
+        &__title {
+          text-decoration: none;
+          color: black;
+        }
+        &__edit {
+          color: green;
+        }
+        &__trash {
+          color: blueviolet;
+        }
+      }
+    }
+  }
+  &__add {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgba(18, 224, 87, 0.9);
+    &__btn {
+      padding: 10px 30px;
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      color: #fff;
+    }
+  }
+}
+
+// show
+
+.show {
+  background-image: url("ひまわり.jpg");
+  background-size: cover;
+  padding: 40px 20px;
+  max-width: 100%;
+  height: 100vh;
+  text-align: center;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    &__title {
+      font-size: 80px;
+      font-weight: bold;
+      color: rgba(46, 228, 158, 0.8);
+      padding: 45px;
+    }
+    &__area {
+      margin-bottom: 30px;
+      width: 85%;
+      border: 1px solid gray;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      &__message {
+        text-align: left;
+        font-size: 28px;
+      }
+    }
+    &__btn {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 70px;
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 70%;
+      border: 1px solid gray;
+      &__edit {
+        text-decoration: none;
+        font-size: 23px;
+        color: green;
+      }
+      &__trash {
+        font-size: 23px;
+        text-decoration: none;
+        color: blueviolet;
+      }
+    }
+  }
+  &__back {
+    margin-top: 40px;
+    background-color: gray;
+    opacity: 0.9;
+    width: 130px;
+    border-radius: 10px;
+    &__btn {
+      font-size: 40px;
+      padding: 5px 15px;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+// form
+
+.form {
+  background-image: url("ひまわり.jpg");
+  background-size: cover;
+  padding: 40px;
+  max-width: 100%;
+  height: 125vh;
+  text-align: center;
+  &__main {
+    padding: 20px;
+  }
+  &__contents {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__main {
+    &__title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 80px;
+      font-family: monospace;
+      color: rgba(46, 228, 158, 0.8);
+    }
+  }
+  &__title {
+    margin-top: 300px;
+    &__label {
+      font-size: 50px;
+    }
+  }
+  &__titleText {
+    margin-bottom: 10px;
+    &__field {
+      font-size: 35px;
+      width: 640px;
+      height: 50px;
+      padding: 8px 15px;
+    }
+  }
+  &__message {
+    &__label {
+      font-size: 40px;
+    }
+  }
+  &__messageText {
+    margin-bottom: 10px;
+    &__area {
+      font-size: 30px;
+      height: 320px;
+      width: 640px;
+      padding: 15px;
+    }
+  }
+  &__submit {
+    margin-bottom: 20px;
+    &__btn {
+      border-radius: 10px;
+      background-color: rgba(46, 228, 158, 0.9);
+      padding: 5px 10px;
+      font-size: 50px;
+      color: #fff;
+    }
+  }
+  &__back {
+    text-align: center;
+    background-color: gray;
+    opacity: 0.9;
+    width: 130px;
+    border-radius: 10px;
+    &__btn {
+      font-size: 40px;
+      padding: 5px 15px;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

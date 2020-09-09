@@ -1,0 +1,16 @@
+.home
+  .home__main
+    .home__title
+      TASK SAILER
+    .home__main__container
+      .home__main__sign
+        - if user_signed_in?
+          .home__main__start
+            = link_to "はじめる", tasks_path, class: "home__main__start__btn"
+          .home__main__sign__out
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "home__main__sign__out__btn"
+        - else
+          .home__main__sign__up
+            = link_to "新規登録", new_user_registration_path, class: "home__main__sign__up__btn"
+          .home__main__sign__in
+            = link_to "ログイン", new_user_session_path, class:"home__main__sign__in__btn"

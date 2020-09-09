@@ -1,0 +1,44 @@
+.fuzzy_search
+  = form_tag(searches_path,method: :get) do
+    = text_field_tag :search, "",placeholder:"何かお探しですか？", class: "fuzzy_search__field"
+    = submit_tag '検索', :name => nil, class: "fuzzy_search__btn"
+.main
+  .main__TASKSAILER
+    = link_to "TASK SAILER", root_path, class:"main__TASKSAILER"
+  .main__title 
+    タスク一覧
+  %table.main__table
+    %thead.main__table__thead
+      %tr.main__table__thead__tr
+        %th.main__table__thead__th
+          タスク名
+        %th.main__table__thead__th
+          重要性
+        %th.main__table__thead__th
+          編集
+        %th.main__table__thead__th
+          削除
+    %tbody.main__table__tbody
+      - @tasks.each do |task|
+        %tr.main__table__tbody__tr
+          - if task.user.id == current_user.id
+            %td.main__table__tbody__td
+              = link_to task_path(task), class: "main__table__tbody__td__title" do
+                = task.title  
+            %td.main__table__tbody__td
+              - if current_user.already_important?(task)
+                .star
+                  = link_to task_importants_path(task), method: :delete, class: "star__star1" do
+                    = icon('fas', 'star')
+              - else
+                .star
+                  =link_to task_importants_path(task), method: :post, class: "star__star1" do
+                    = icon('far', 'star')
+            %td.main__table__tbody__td
+              = link_to edit_task_path(task),class: "main__table__tbody__td__edit" do
+                = icon('fas', 'edit')
+            %td.main__table__tbody__td
+              = link_to task_path(task), method: :delete, data: {confirm: "削除しますか？"}, class: "main__table__tbody__td__trash" do
+                = icon('fas', 'trash')
+  .main__add
+    = link_to '追加', new_task_path, class: "main__add__btn" 

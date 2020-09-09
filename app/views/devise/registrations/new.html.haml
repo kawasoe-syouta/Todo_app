@@ -1,0 +1,35 @@
+.sign
+  .sign__main
+    .sign__main__title 
+      Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .sign__main__form
+        = render "devise/shared/error_messages", resource: resource
+        .sign__main__form__name
+          = f.label :name
+          %br/
+        .sign__main__form__name__text
+          = f.text_field :name, autofocus: true, autocomplete: "name", class: "sign__main__form__name__text"
+        .sign__main__form__email
+          = f.label :email
+          %br/
+        .sign__main__form__email__text
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "sign__main__form__email__text"
+        .sign__main__form__password
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+        .sign__main__form__password__text
+          = f.password_field :password, autocomplete: "new-password", class: "sign__main__form__password__text"
+        .sign__main__form__password
+          = f.label :password_confirmation
+          %br/
+        .sign__main__form__password__text
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "sign__main__form__password__text"
+        .sign__main__form__submit
+          = f.submit "新規登録", class: "sign__main__form__submit__btn"
+        .form__back
+          = link_to '戻る', root_path, class: "form__back__btn"
+      -# = render "devise/shared/links"

@@ -1,0 +1,18 @@
+.form
+  .form__main
+  %h1.form__main__title
+    Edit Task
+  = form_with(model: @task, local: true) do |f|
+    .form__contents
+      .form__title
+        = f.label :title, class: "form__title__label"
+      .form__titleText
+        = f.text_field :title, class: "form__titleText__field"
+      .form__message
+        = f.label :message, class: "form__message__label"
+      .form__messageText
+        = f.text_area :message, class: "form__messageText__area"
+      .form__submit
+        = f.submit('更新', class: "form__submit__btn")
+      .form__back
+        = link_to '戻る', tasks_path, class: "form__back__btn"
